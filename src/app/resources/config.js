@@ -98,7 +98,7 @@ const display = {
 };
 
 const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
+  action: "https://formsubmit.co/yogesh98parekh@gmail.com",
   effects: {
     mask: {
       cursor: true,

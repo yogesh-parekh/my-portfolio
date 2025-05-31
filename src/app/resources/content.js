@@ -18,10 +18,9 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I write about software engineering, AI, and personal growth — often
-      weaving insights from the Bhagavad Gita, leadership experiences, and
-      real-world tech projects to inspire and empower professionals and students
-      alike.
+      I write about software engineering, AI, and personal growth often weaving
+      insights from the Bhagavad Gita, leadership experiences, and real-world
+      tech projects to inspire and empower professionals and students alike.
     </>
   ),
 };
