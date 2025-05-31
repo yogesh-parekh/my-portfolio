@@ -57,7 +57,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Crafting Scalable Solutions with Code</>,
   featured: {
     display: true,
     title: (
@@ -69,13 +69,9 @@ const home = {
   },
   subline: (
     <>
-      I'm Yogesh, a software engineer at{" "}
-      {/* <Logo
-        icon={false}
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      /> */}
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Yogesh, a pragmatic Software Engineer, mastering Python and AWS to
+      deliver scalable, secure solutions. Beyond work, I innovate through
+      personal coding ventures.
     </>
   ),
 };
@@ -113,17 +109,26 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Tech Prescient",
+        timeframe: "Aug 2021 - Present",
+        role: "Software Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20%
-            increase in user engagement and 30% faster load times.
+            <b>Pioneered Centralized Application Management Platform: </b>
+            Led a team of 7 to develop a Python and AWS-based platform,
+            replacing manual workflows and Google Sheets. Streamlined approvals,
+            cutting manual effort by 80% and saving dozens of hours weekly.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows,
-            enabling designers to iterate 50% faster.
+            <b>Designed Secure RBAC System: </b>Built an automated Role-Based
+            Access Control system integrated with multiple Identity Providers,
+            reducing access errors by 30% and enhancing security across 150+
+            enterprise applications.
+          </>,
+          <>
+            <b>Drove Stakeholder Success: </b>Collaborated with cross-functional
+            teams, gathering requirements and delivering detailed designs,
+            accelerating project completion by 15%.
           </>,
         ],
         images: [
@@ -137,17 +142,25 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "SevenRE UG",
+        timeframe: "Jan 2021 - Aug 2021",
+        role: "Software Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple
-            platforms, improving design consistency by 40%.
+            <b>Built Scalable Microservices for Urban Mobility: </b>Developed
+            secure microservices using AWS Lambda, Terraform, and DynamoDB,
+            powering city transportation solutions in partnership with the
+            German government.
           </>,
           <>
-            Led a cross-functional team to launch a new product line,
-            contributing to a 15% increase in overall company revenue.
+            <b>Integrated Advanced APIs: </b>Enhanced security and communication
+            by integrating Okta for authentication and Twilio for messaging,
+            enabling seamless ticketing for public transport.
+          </>,
+          <>
+            <b>Impacted Urban Mobility: </b>Contributed to a government-backed
+            project that streamlined ticketing, improving access to public
+            transportation for thousands of users.
           </>,
         ],
         images: [],
