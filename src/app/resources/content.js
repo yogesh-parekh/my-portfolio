@@ -1,4 +1,4 @@
-import { Logo } from "@/once-ui/components";
+import { Logo, SmartLink } from "@/once-ui/components";
 
 const person = {
   firstName: "Yogesh",
@@ -58,15 +58,13 @@ const home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Crafting Scalable Solutions with Code</>,
-  featured: {
-    display: true,
-    title: (
-      <>
-        Recent project: <strong className="ml-4">Once UI</strong>
-      </>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
-  },
+  // featured: {
+  //   display: true,
+  //   title: (
+  //     <>{/* Recent project: <strong className="ml-4">Once UI</strong> */}</>
+  //   ),
+  //   href: "/work/building-once-ui-a-customizable-design-system",
+  // },
   subline: (
     <>
       I'm Yogesh, a pragmatic Software Engineer, mastering Python and AWS to
@@ -131,15 +129,16 @@ const about = {
             accelerating project completion by 15%.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
+        // images: [
+        //   // optional: leave the array empty if you don't want to display images
+        //   {
+        //     src: "/images/projects/project-01/cover-01.jpg",
+        //     alt: "Once UI Project",
+        //     width: 16,
+        //     height: 9,
+        //   },
+        // ],
       },
       {
         company: "SevenRE UG",
@@ -172,12 +171,23 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Pandit Deendayal Energy University",
+        description: (
+          <>
+            B. Tech in Computer Engineering (8.0 CGPA)<br></br>
+            Shaped my technical expertise and innovative mindset through a
+            dynamic engineering curriculum.
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "S N Kansagra School (ICSE)",
+        description: (
+          <>
+            Cultivated my academic foundation, critical thinking, and leadership
+            through a holistic curriculum.
+          </>
+        ),
       },
     ],
   },
@@ -186,40 +196,39 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
+        title: "Programming Languages",
+        description: <>Python</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
+        // images: [
+        //   {
+        //     src: "/images/projects/project-01/cover-02.jpg",
+        //     alt: "Project image",
+        //     width: 16,
+        //     height: 9,
+        //   },
+        //   {
+        //     src: "/images/projects/project-01/cover-03.jpg",
+        //     alt: "Project image",
+        //     width: 16,
+        //     height: 9,
+        //   },
+        // ],
       },
       {
-        title: "Next.js",
+        title: "Cloud and DevOps",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Amazon Web Services (AWS) – EC2, S3, Lambda, RDS, CloudWatch</>
         ),
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+      },
+      {
+        title: "Data & Backend Engineering",
+        description: (
+          <>
+            RESTful API Development <br></br>Database Design – PostgreSQL,
+            MySQL, DynamoDB <br></br>Data Processing – Pandas, NumPy
+          </>
+        ),
       },
     ],
   },
