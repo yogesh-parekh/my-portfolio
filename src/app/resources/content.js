@@ -58,13 +58,15 @@ const home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Crafting Scalable Solutions with Code</>,
-  // featured: {
-  //   display: true,
-  //   title: (
-  //     <>{/* Recent project: <strong className="ml-4">Once UI</strong> */}</>
-  //   ),
-  //   href: "/work/building-once-ui-a-customizable-design-system",
-  // },
+  featured: {
+    display: true,
+    title: (
+      <>
+        Recent project: <strong className="ml-4">Coming soon!</strong>
+      </>
+    ),
+    href: "/work/building-once-ui-a-customizable-design-system",
+  },
   subline: (
     <>
       I'm Yogesh, a pragmatic Software Engineer, mastering Python and AWS to
