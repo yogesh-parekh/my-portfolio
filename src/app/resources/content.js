@@ -18,8 +18,10 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the
-      intersection of creativity and engineering.
+      I write about software engineering, AI, and personal growth — often
+      weaving insights from the Bhagavad Gita, leadership experiences, and
+      real-world tech projects to inspire and empower professionals and students
+      alike.
     </>
   ),
 };
@@ -30,17 +32,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/yogesh-parekh",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/engineered-by-yogesh/",
   },
   {
-    name: "X",
-    icon: "x",
-    link: "",
+    name: "Medium",
+    icon: "medium",
+    link: "https://medium.com/@engineered-by-yogesh",
   },
   {
     name: "Email",
@@ -68,10 +70,10 @@ const home = {
   subline: (
     <>
       I'm Yogesh, a software engineer at{" "}
-      <Logo
+      {/* <Logo
         icon={false}
         style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
+      /> */}
       , where I craft intuitive
       <br /> user experiences. After hours, I build my own projects.
     </>
@@ -99,10 +101,10 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for
-        transforming complex challenges into simple, elegant design solutions.
-        Her work spans digital interfaces, interactive experiences, and the
-        convergence of design and technology.
+        👋 Namaste! I'm a software engineer passionate about building purposeful
+        tech. Outside of work, I serve as a volunteer and orator at BAPS
+        Swaminarayan Sanstha. I enjoy mentoring, exploring AI, and blending
+        spiritual wisdom with modern innovation.
       </>
     ),
   },
