@@ -60,7 +60,7 @@ export default async function Project({
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  const allowedSlugs = ["rbac"];
+  const allowedSlugs = ["rbac", "aup"];
 
   let post = getPosts(["src", "app", "work", "projects"])
     .filter((post) => allowedSlugs.includes(post.slug))

@@ -119,6 +119,14 @@ const about = {
             Led a team of 7 to develop a Python and AWS-based platform,
             replacing manual workflows and Google Sheets. Streamlined approvals,
             cutting manual effort by 80% and saving dozens of hours weekly.
+            <br></br>
+            <SmartLink
+              suffixIcon="arrowUpRightFromSquare"
+              style={{ margin: "5", width: "fit-content" }}
+              href={"/work/aup"}
+            >
+              <Text variant="body-default-s">Detailed Case Study</Text>
+            </SmartLink>
           </>,
           <>
             <b>Designed Secure RBAC System: </b>Built an automated Role-Based
