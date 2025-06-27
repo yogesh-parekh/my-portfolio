@@ -1,4 +1,6 @@
 import { Logo, SmartLink } from "@/once-ui/components";
+import Link from "next/link";
+import { Text } from "@/once-ui/components";
 
 const person = {
   firstName: "Yogesh",
@@ -123,6 +125,14 @@ const about = {
             Access Control system integrated with multiple Identity Providers,
             reducing access errors by 30% and enhancing security across 150+
             enterprise applications.
+            <br></br>
+            <SmartLink
+              suffixIcon="arrowUpRightFromSquare"
+              style={{ margin: "5", width: "fit-content" }}
+              href={"/work/rbac"}
+            >
+              <Text variant="body-default-s">Detailed Case Study</Text>
+            </SmartLink>
           </>,
           <>
             <b>Drove Stakeholder Success: </b>Collaborated with cross-functional
