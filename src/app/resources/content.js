@@ -181,6 +181,15 @@ const about = {
             project that streamlined ticketing, improving access to public
             transportation for thousands of users.
           </>,
+          <>
+            <SmartLink
+              suffixIcon="arrowUpRightFromSquare"
+              style={{ margin: "5", width: "fit-content" }}
+              href={"/work/seven_re"}
+            >
+              <Text variant="body-default-s">Detailed Case Study</Text>
+            </SmartLink>
+          </>,
         ],
         images: [],
       },
