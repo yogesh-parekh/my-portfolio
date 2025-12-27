@@ -1,0 +1,380 @@
+---
+title: "Vachanamrut RAG Chatbot (AI-powered Spiritual Text Q&A)"
+publishedAt: "2025-12-27"
+summary: "Research-grade AI system for scripture-grounded question answering"
+images:
+  - "/images/projects/project-01/rag.png"
+
+link: "https://huggingface.co/spaces/yparekh/vachnamrut-chat-bot"
+team:
+  - name: "Yogesh Parekh"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/engineered-by-yogesh/"
+---
+
+## Overview
+
+Traditional study of the Vachanamrut requires manual navigation across multiple chapters, contexts, and philosophical explanations. While rich in wisdom, extracting precise answers to specific questions can be time-consuming—especially for students, speakers, and seekers exploring thematic understanding.
+
+To address this, I built an **AI-powered Retrieval-Augmented Generation (RAG) chatbot** trained on the Vachanamrut, enabling users to ask natural-language questions and receive contextually grounded answers sourced directly from the scripture.
+
+The project was designed as a **self-hosted, explainable, and scalable AI system**, with a strong emphasis on faithfulness to the original text rather than generic LLM responses.
+
+---
+
+> **Quick Navigation**
+>
+> - [Problem & Solution](#problem-statement)
+> - [Architecture Overview](#architecture-and-technical-design)
+> - [Key Learnings](#learnings-and-takeaways)
+> - [Technical Deep Dive](#technical-deep-dive-architecture-and-design-decisions)
+> - [Try the Chatbot](#try-the-chatbot)
+
+---
+
+## Problem Statement
+
+- Spiritual texts like the Vachanamrut are dense, philosophical, and context-dependent
+- Keyword-based search fails to capture intent, meaning, and cross-references
+- Generic AI models hallucinate or oversimplify spiritual concepts
+- No free, transparent AI system existed to reliably query the Vachanamrut
+
+---
+
+## Solution
+
+I designed and implemented a **RAG-based chatbot** that:
+
+- Retrieves only relevant Vachanamrut passages using embeddings
+- Grounds every answer strictly in source text
+- Maintains conversational context for follow-up questions
+- Is publicly deployable with minimal infrastructure cost
+
+---
+
+## Key Features
+
+- Context-aware Q&A over the Vachanamrut
+- Faithful answers grounded in scripture—not generic AI output
+- Conversation memory for multi-turn spiritual discussions
+- Configurable controls:
+  - Search depth
+  - Language preferences
+  - Source visibility
+- Public deployment via Hugging Face / web UI
+- Resume-ready AI project demonstrating end-to-end ownership
+
+---
+
+## Architecture & Technical Design
+
+#### 1. Data Preparation
+
+- Cleaned and structured the Vachanamrut text
+- Chunked content using fixed-length overlapping segments
+- Preserved canonical references (Gadhada, Sarangpur, etc.)
+
+#### 2. Retrieval Layer
+
+- Generated embeddings for all text chunks
+- Stored embeddings in a vector database
+- Performed similarity search to retrieve top relevant passages per query
+
+#### 3. Generation Layer
+
+- Injected retrieved context into the LLM prompt
+- Enforced strict grounding to retrieved passages
+- Tuned generation parameters to reduce hallucinations
+
+![High-level RAG architecture](/images/projects/project-01/rag-architecture.png)
+
+#### 4. UI Layer
+
+- Built a simple web-based chatbot interface
+- Exposed user controls for:
+  - Response length
+  - Creativity vs. faithfulness
+  - Number of retrieved contexts
+
+---
+
+## My Role
+
+**Sole Developer & Architect**
+
+- Designed the complete RAG architecture from scratch
+- Implemented text chunking and embedding strategies
+- Built retrieval logic and prompt-grounding mechanisms
+- Integrated conversational memory into the pipeline
+- Designed the chatbot UI and user controls
+- Deployed the application publicly
+- Manually evaluated answer quality against scripture references
+
+---
+
+## Technologies Used
+
+- **Language**: Python
+- **LLM / AI**:
+  - Large Language Models (LLMs)
+  - Embeddings
+- **RAG Stack**:
+  - Text chunking
+  - Vector similarity search
+  - Prompt engineering
+- **Frameworks**: LangChain
+- **UI**: Gradio
+- **Deployment**: Hugging Face Spaces / Web hosting
+
+---
+
+## Evaluation & Quality Control
+
+- Tested the chatbot with:
+  - Direct factual questions
+  - Conceptual and philosophical queries
+  - Cross-referenced teachings
+- Compared outputs against original Vachanamrut explanations
+- Tuned retrieval depth and prompt constraints for accuracy
+- Identified limitations of conversational memory in long sessions
+
+---
+
+## Impact and Outcomes
+
+- Enabled natural-language access to a complex spiritual text
+- Reduced dependency on manual searching and indexing
+- Demonstrated real-world RAG implementation—not just theory
+- Created a strong AI portfolio project bridging technology and philosophy
+- Built foundational experience in:
+  - Retrieval pipelines
+  - Prompt grounding
+  - AI system evaluation
+
+---
+
+## Learnings and Takeaways
+
+- RAG quality depends more on chunking and retrieval than the model itself
+- Conversational memory increases complexity and failure modes
+- AI systems require manual evaluation—not just benchmarks
+- Faithfulness and explainability matter more than fluency for domain-specific AI
+- Building from scratch deepened understanding far beyond tutorials
+
+---
+
+## Future Improvements
+
+- Add per-answer source citations
+- Introduce multi-answer comparison mode
+- Create thematic evaluation benchmarks
+- Fine-tune a small model on Vachanamrut-specific language
+- Expand to Gujarati–English bilingual support
+
+---
+
+## Summary
+
+This project reflects my ability to **design, build, and deploy an end-to-end AI system** under real-world constraints, with thoughtful evaluation and domain sensitivity.
+
+The [**Vachanamrut RAG Chatbot**](https://huggingface.co/spaces/yparekh/vachnamrut-chat-bot) demonstrates growing expertise in applied AI, system design, and responsible use of LLMs - making it a strong addition to my engineering portfolio.
+
+---
+
+# Technical Deep Dive (Architecture & Design Decisions)
+
+This section dives deeper into the technical implementation of the Vachanamrut RAG Chatbot for readers interested in system design, trade-offs, and AI engineering details.
+
+## High-Level Architecture
+
+The chatbot follows a standard **RAG pipeline**, separating knowledge retrieval from language generation.
+
+**Flow:**
+
+1. User submits a question through a web UI
+2. The query is converted into an embedding
+3. A vector database retrieves the most relevant scripture passages
+4. Retrieved context is injected into a grounded prompt
+5. A Large Language Model generates the final response
+
+> The LLM is used only for response synthesis — all domain knowledge is retrieved externally.
+
+---
+
+## Data Source
+
+The raw Vachanamrut text was sourced from [**Anirdesh.com**](https://www.anirdesh.com/vachanamrut/index.php?format=en), a publicly accessible digital archive.  
+The data was used solely for educational and non-commercial purposes.
+
+Before indexing, the text underwent:
+
+- Cleaning and normalization
+- Structural segmentation by discourse
+- Metadata enrichment (chapter, reference number, titles)
+
+---
+
+## Text Chunking & Indexing Strategy
+
+The Vachanamrut text was segmented using a **fixed-length, overlap-based chunking strategy** implemented via a recursive character splitter.
+
+Trade-offs Observed
+
+- During testing, I observed the following trade-offs:
+- Some philosophical explanations span multiple chunks, requiring overlap to preserve meaning
+- Larger chunk sizes improved contextual completeness but reduced retrieval precision
+- Smaller chunk sizes increased recall but sometimes fragmented ideas
+
+Key considerations:
+
+- Balanced chunk size for retrieval accuracy and context completeness
+- Avoiding fragmentation of explanations across chunks
+- Preserving metadata for traceability and source attribution
+
+Each chunk was independently embedded and indexed.
+
+---
+
+## Embeddings
+
+Text embeddings were generated using a **sentence-level embedding model** optimized for semantic similarity tasks.
+
+Important design decisions:
+
+- The **same embedding model** was used for both document indexing and query embedding
+- Embeddings were normalized to improve cosine similarity matching
+- No domain fine-tuning was applied to avoid overfitting
+
+---
+
+## Vector Database & Semantic Retrieval
+
+For semantic search, I used **FAISS (Facebook AI Similarity Search)** as the vector database.
+
+FAISS enables:
+
+- Efficient similarity search over dense embeddings
+- Fast top-K retrieval at query time
+- Local, lightweight deployment without managed infrastructure
+
+At runtime:
+
+- The user query is embedded
+- FAISS retrieves the top-K most semantically relevant Vachanamrut passages
+- Retrieved chunks are passed downstream for grounding
+
+---
+
+## Prompt Engineering & Grounding
+
+To minimize hallucinations, the system enforces **strict grounding rules**.
+
+The prompt explicitly instructs the LLM to:
+
+- Answer **only** from the provided Vachanamrut passages
+- Avoid adding external interpretations or assumptions
+- Respond concisely and respectfully
+
+If the retrieved context does not contain an answer, the system responds with:
+
+> “This is not mentioned in the Vachanamrut.”
+
+This constraint significantly improves reliability and trustworthiness.
+
+---
+
+## Language Model
+
+A Large Language Model (LLM) is used exclusively for **language generation**, not knowledge storage.
+
+Design principle:
+
+> The model should not “know” the Vachanamrut — it should **read it at runtime**.
+
+This keeps the system:
+
+- Stateless
+- Auditable
+- Resistant to hallucinated knowledge
+
+Generation parameters (temperature, token limits) are tuned to favor accuracy over creativity.
+
+---
+
+## Conversational Context Handling
+
+The chatbot supports multi-turn interactions using a **limited rolling conversation window**.
+
+Implementation notes:
+
+- Recent user queries and responses are appended to the prompt
+- Context length is capped to prevent retrieval dilution
+- Long-term memory is intentionally avoided
+
+Through experimentation, I observed that excessive conversational memory can negatively impact retrieval relevance — highlighting a key trade-off in RAG system design.
+
+---
+
+## User Interface
+
+A lightweight web interface built using **Gradio** allows users to:
+
+- Ask natural language questions
+- View answers alongside exact source passages
+- Adjust generation parameters for experimentation
+
+The UI is intentionally minimal, prioritizing clarity and traceability over visual complexity.
+
+---
+
+## Deployment
+
+The chatbot is deployed publicly using **Hugging Face Spaces**, enabling:
+
+- Easy sharing
+- No local setup for users
+
+---
+
+## Design Decisions & Trade-offs
+
+- **FAISS over managed vector DBs**: simplicity and local control
+- **Strict grounding** over fluent responses
+- **Limited memory** to preserve retrieval accuracy
+- **No fine-tuning** to maintain interpretability
+
+These decisions were driven by correctness, not demo aesthetics.
+
+---
+
+## Impact & Learnings
+
+This project helped me gain hands-on experience in:
+
+- End-to-end RAG system design
+- Vector search and semantic retrieval
+- Prompt grounding and hallucination control
+- AI trade-offs in real-world applications
+
+Most importantly, it reinforced that **LLM quality depends more on system design than model size**.
+
+---
+
+## Try the Chatbot
+
+You can interact with the live version of the [**Vachanamrut RAG Chatbot**](https://huggingface.co/spaces/yparekh/vachnamrut-chat-bot) here.
+
+This public demo allows you to:
+
+- Ask natural-language questions about the Vachanamrut
+- View answers grounded strictly in the source text
+- Explore the strengths and limitations of a real-world RAG system
+
+Note: The demo is intended for educational and exploratory use. Responses are grounded only in retrieved passages, and the system may explicitly state when an answer is not present in the text.
+
+---
+
+## Feedback & Contact
+
+If you have suggestions, feedback, or would like to discuss the system design, feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/engineered-by-yogesh/).

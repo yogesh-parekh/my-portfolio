@@ -2,11 +2,18 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 
 import classNames from "classnames";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style, font, home } from "@/app/resources";
 
-import { Background, Column, Flex, ThemeProvider, ToastProvider } from "@/once-ui/components";
+import {
+  Background,
+  Column,
+  Flex,
+  ThemeProvider,
+  ToastProvider,
+} from "@/once-ui/components";
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { Meta } from "@/once-ui/modules";
 
@@ -43,7 +50,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         font.primary.variable,
         font.secondary.variable,
         font.tertiary.variable,
-        font.code.variable,
+        font.code.variable
       )}
     >
       <head>
@@ -70,14 +77,20 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       </head>
       <ThemeProvider>
         <ToastProvider>
-          <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
+          <Column
+            style={{ minHeight: "100vh" }}
+            as="body"
+            fillWidth
+            margin="0"
+            padding="0"
+          >
             <Background
               position="fixed"
               mask={{
                 x: effects.mask.x,
                 y: effects.mask.y,
                 radius: effects.mask.radius,
-                cursor: effects.mask.cursor
+                cursor: effects.mask.cursor,
               }}
               gradient={{
                 display: effects.gradient.display,
@@ -130,6 +143,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           </Column>
         </ToastProvider>
       </ThemeProvider>
+      {/* Add Vercel Analytics at the end */}
+      <Analytics />
     </Flex>
   );
 }

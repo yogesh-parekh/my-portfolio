@@ -64,10 +64,10 @@ const home = {
     title: (
       <>
         Recent project:{" "}
-        <strong className="ml-4">Application Universe Platform</strong>
+        <strong className="ml-4">Vachanamrut RAG Chatbot</strong>
       </>
     ),
-    href: "/work/aup",
+    href: "/work/rag",
   },
   subline: (
     <>
@@ -186,6 +186,28 @@ const about = {
               suffixIcon="arrowUpRightFromSquare"
               style={{ margin: "5", width: "fit-content" }}
               href={"/work/seven_re"}
+            >
+              <Text variant="body-default-s">Detailed Case Study</Text>
+            </SmartLink>
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Personal Project",
+        timeframe: "Dec 2025",
+        role: "AI Project",
+        achievements: [
+          <>
+            <b>Built Vachanamrut RAG Chatbot: </b>
+            Developed a retrieval-augmented AI chatbot that answers questions
+            directly from the Vachanamrut. Implemented text chunking, vector
+            search, prompt engineering, and deployed via Hugging Face.
+            <br></br>
+            <SmartLink
+              suffixIcon="arrowUpRightFromSquare"
+              style={{ margin: "5", width: "fit-content" }}
+              href={"/work/rag"}
             >
               <Text variant="body-default-s">Detailed Case Study</Text>
             </SmartLink>
