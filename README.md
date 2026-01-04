@@ -13,7 +13,7 @@ The website highlights:
 
 ## 🌐 Live Website
 
-👉 [[Your Website URL](https://my-portfolio-yogesh-parekhs-projects.vercel.app/about)]
+👉 [yogeshparekh.dev](https://my-portfolio-yogesh-parekhs-projects.vercel.app/about)
 
 ---
 
