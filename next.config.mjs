@@ -13,6 +13,16 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/about",
+        permanent: true, // 308 redirect
+      },
+    ];
+  },
 };
 
 export default withMDX(nextConfig);
