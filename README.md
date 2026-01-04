@@ -1,94 +1,131 @@
-# **Magic Portfolio by Once UI**
+# Portfolio Website – Yogesh Parekh
 
-View the [demo here](https://demo.magic-portfolio.com).
+This repository contains the source code for my **personal portfolio website**, created to give recruiters and hiring managers a **clear, practical view of my engineering capabilities**, beyond what a resume can show.
 
-![Magic Portfolio](https://demo.magic-portfolio.com/images/og/home.jpg)
+The website highlights:
 
+- Real-world projects with architectural depth
+- Applied AI systems (not demos or experiments)
+- Cloud and backend engineering expertise
+- Ownership, decision-making, and execution mindset
 
-# **Getting started**
+---
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+## 🌐 Live Website
 
-**1. Clone the repository**
+👉 [[Your Website URL](https://my-portfolio-yogesh-parekhs-projects.vercel.app/about)]
+
+---
+
+## 👨‍💻 Professional Summary
+
+I am a **Software Engineer with 4+ years of experience**, primarily working with **Python, AWS, and cloud-native architectures**.
+
+My work focuses on:
+
+- Designing and delivering **end-to-end systems**
+- Building **production-oriented AI solutions** using Retrieval-Augmented Generation (RAG)
+- Infrastructure-as-Code using **Terraform**
+- Writing clean, maintainable, and scalable backend services
+
+This portfolio is designed to demonstrate **how I think**, **how I design systems**, and **how I make trade-offs**—not just which technologies I’ve used.
+
+---
+
+## 🚀 What Recruiters Will Find Here
+
+### ✅ Real Projects (Not Toy Examples)
+
+Each project includes:
+
+- A clear problem statement
+- Architectural decisions and trade-offs
+- Constraints and failure points
+- What I would improve in the next iteration
+
+Projects include:
+
+- AI-powered Q&A systems using RAG
+- Serverless applications on AWS
+- Infrastructure automation with Terraform
+
+---
+
+### ✍️ Technical Writing & Engineering Maturity
+
+The blog section showcases:
+
+- Ability to explain complex systems clearly
+- Honest retrospectives on engineering decisions
+- Learnings from real implementations
+
+Topics covered:
+
+- Applied AI and RAG systems
+- Cloud architecture and scalability
+- Engineering leadership and ownership
+- System design lessons from production work
+
+---
+
+### 🧠 Applied AI (Not Hype)
+
+My AI work emphasizes:
+
+- Accuracy and grounding over fluency
+- Retrieval quality over model size
+- Responsible and constrained AI system design
+
+Hands-on experience includes:
+
+- RAG-based Q&A systems
+- AI workflows with strict correctness requirements
+- Evaluation strategies where answers are not binary
+
+---
+
+## 🛠️ Core Skill Set
+
+**Languages**
+
+- Python
+
+**Cloud & Backend**
+
+- AWS (Lambda, API Gateway, S3, IAM, CloudWatch)
+- Serverless architectures
+- RESTful APIs
+
+**Infrastructure**
+
+- Terraform
+- Environment isolation and state management
+
+**AI / ML (Applied)**
+
+- Retrieval-Augmented Generation (RAG)
+- Embeddings and vector search
+- Prompt design and evaluation
+- AI system failure analysis
+
+**Engineering Practices**
+
+- End-to-end ownership
+- Requirement clarification
+- Trade-off driven design
+- Clear documentation and communication
+
+---
+
+## 📁 Repository Structure
+
+```text
+.
+├── content/
+│   ├── blogs/        # Technical blogs (MDX)
+│   └── projects/     # Project case studies
+├── components/       # Reusable UI components
+├── pages/            # Application routes and layouts
+├── public/           # Static assets
+└── README.md
 ```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
-
-**2. Install dependencies**
-```
-npm install
-```
-
-**3. Run dev server**
-```
-npm run dev
-```
-
-**4. Edit config**
-```
-src/app/resources/config
-```
-
-**5. Edit content**
-```
-src/app/resources/content
-```
-
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
-
-# **Documentation**
-
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
-
-# **Features**
-
-## **Once UI**
-- All tokens, components & features of [Once UI](https://once-ui.com)
-
-## **SEO**
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
-
-## **Design**
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
-
-## **Content**
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
-
-## **Localization**
-- A localized version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
-
-# **Authors**
-
-Connect with us on Threads or LinkedIn.
-
-Lorant Toth: [Threads](https://www.threads.net/@lorant.one), [LinkedIn](https://www.linkedin.com/in/tothlorant/)  
-Zsofia Komaromi: [Threads](https://www.threads.net/@zsofia_kom), [LinkedIn](https://www.linkedin.com/in/zsofiakomaromi/)
-
-Localization added by [François Hernandez](https://github.com/francoishernandez)
-
-# **Get involved**
-
-- Join the [Design Engineers Club on Discord](https://discord.com/invite/5EyAQ4eNdS) and share your portfolio with us!
-- Report a [bug](https://github.com/once-ui-system/magic-portfolio/issues/new?labels=bug&template=bug_report.md).
-
-# **License**
-
-Distributed under the CC BY-NC 4.0 License.
-- Commercial usage is not allowed.
-- Attribution is required.
-- You can extend the license to commercial use by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-# **Deploy with Vercel**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
