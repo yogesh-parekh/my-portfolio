@@ -1,0 +1,232 @@
+---
+title: "Building an AI Q&A System on a Single Book: Lessons from My First RAG Project"
+summary: "What I learned while building a Retrieval-Augmented Generation system on a single spiritual text, and why engineering choices mattered more than model size."
+publishedAt: "2026-01-04"
+tag: "RAG"
+---
+
+When I decided to build an AI-powered Q&A system based on a **single spiritual text**, my goal was not to create a flashy chatbot.
+
+The goal was much stricter:
+
+> Answers must come **only** from the book.  
+> No hallucinations. No assumptions. No external knowledge.
+
+This constraint shaped every architectural decision I made—and led me to build my first **Retrieval-Augmented Generation (RAG)** system.
+
+This post documents what I built, where it broke down, and what this project taught me about **real-world AI systems**, beyond tutorials and demos.
+
+---
+
+## The Problem Statement
+
+At a high level, the system needed to:
+
+- Accept natural language questions
+- Retrieve relevant passages from one book
+- Generate answers strictly grounded in those passages
+
+Unlike general-purpose chatbots:
+
+- Creativity was a liability
+- Confidence without grounding was dangerous
+- Saying _“I don’t know based on this text”_ was acceptable—even desirable
+
+This made the project less about models and more about **architecture and discipline**.
+
+---
+
+## Why I Chose RAG Over Fine-Tuning
+
+At first glance, fine-tuning felt like a natural idea:
+
+- One book
+- A closed domain
+- Repeated themes
+
+But after deeper analysis, **RAG was clearly the better choice**.
+
+### Fine-tuning does not enforce factual grounding
+
+Fine-tuning teaches a model _how to respond_, not _what is true_.
+
+Even a fine-tuned model can hallucinate confidently—especially when asked interpretive or philosophical questions.
+
+For a spiritual text, **faithfulness matters more than fluency**.
+
+---
+
+### RAG keeps the source of truth external
+
+With RAG:
+
+- The LLM does not “own” the knowledge
+- The book remains the single source of truth
+- Answers can be traced back to retrieved passages
+
+This separation made the system more transparent and easier to reason about.
+
+---
+
+### Content updates are simple
+
+If a translation improves or annotations are added:
+
+- Re-embed the text
+- No retraining
+- No expensive compute
+
+That flexibility mattered more than squeezing out marginal gains from fine-tuning.
+
+---
+
+## My Initial Chunking Strategy (And Its Limitations)
+
+For this first version, I used **fixed-size chunking**.
+
+The text was split based on character or token length, assuming embedding models would capture sufficient semantic meaning.
+
+This worked—but imperfectly.
+
+---
+
+### What went wrong with fixed-size chunking
+
+1. **Context fragmentation**  
+   Ideas were often split mid-thought, weakening retrieval quality.
+
+2. **Partial answers**  
+   The retriever surfaced relevant but incomplete passages, leading to shallow responses.
+
+3. **Loss of philosophical continuity**  
+   Spiritual texts build meaning gradually. Fixed-size chunks disrupted that flow.
+
+The system did not fail loudly.  
+It failed _quietly_—through slightly worse answers.
+
+---
+
+### What I learned (but did not implement yet)
+
+Through experimentation and evaluation, it became clear that **semantic or structure-aware chunking** would significantly improve retrieval quality.
+
+Examples include:
+
+- Chunking complete question–answer sections
+- Preserving logical or thematic continuity
+- Aligning chunks with the book’s natural structure
+
+Due to time constraints, I chose **not to refactor the entire pipeline** in this iteration.
+
+This became one of my biggest takeaways:
+
+> **Chunking strategy can influence answer quality more than the choice of LLM.**
+
+---
+
+## Retrieval Failures I Didn’t Anticipate
+
+Even with reasonable chunking, retrieval introduced its own challenges.
+
+### Vocabulary mismatch
+
+Users asked questions in modern language, while the text used traditional or philosophical terminology.
+
+For example:
+
+- User: _“How should one control desires?”_
+- Text concepts: restraint of senses, detachment, discipline
+
+Embeddings helped—but not always sufficiently.
+
+**Lesson:**  
+Retrieval systems must bridge _conceptual gaps_, not just lexical ones.
+
+---
+
+### Too much context hurts performance
+
+Retrieving too many chunks:
+
+- Increased token usage
+- Confused the LLM
+- Reduced answer precision
+
+In practice, fewer high-quality chunks consistently performed better than flooding the prompt.
+
+---
+
+## Evaluation: The Hardest Part of the Project
+
+Evaluation turned out to be the most underestimated challenge.
+
+In traditional software, outputs are deterministic.
+
+In RAG systems:
+
+- Answers are probabilistic
+- Partial correctness is common
+- Fluency can mask inaccuracies
+
+Automated metrics offered little insight.
+
+I relied heavily on **manual evaluation**, asking:
+
+- Is the answer strictly grounded in retrieved text?
+- Is anything implied or invented?
+- Does the model acknowledge uncertainty when needed?
+
+Sometimes, the best answer was simply:
+
+> _“This is not explicitly addressed in the text.”_
+
+---
+
+## What This Project Taught Me About Applied AI
+
+1. **RAG is an architecture, not a shortcut**  
+   Every layer—chunking, retrieval, prompting, evaluation—matters.
+
+2. **Retrieval quality beats model size**  
+   A smaller model with good context outperformed larger models with weak retrieval.
+
+3. **AI systems should know their limits**  
+   Trust increases when a system admits uncertainty.
+
+4. **Constraints improve engineering discipline**  
+   Limiting the system to one book prevented shortcuts and forced clarity.
+
+---
+
+## Why This Project Matters to Me
+
+This wasn’t just an AI experiment.
+
+It was an exercise in:
+
+- Respecting the integrity of a sacred text
+- Applying modern AI responsibly
+- Building systems that prioritize **truth over cleverness**
+
+In an era focused on larger models and broader capabilities, this project reinforced the value of **precision and restraint**.
+
+---
+
+## What I’d Improve in the Next Iteration
+
+- Introduce semantic or structure-aware chunking
+- Improve query rewriting for conceptual alignment
+- Add explicit citations to retrieved passages
+- Build stronger qualitative evaluation workflows
+
+---
+
+## Final Thoughts
+
+If you’re building AI systems for domains where **accuracy, trust, and faithfulness** matter—education, law, medicine, or spiritual texts—RAG is a powerful starting point.
+
+But its success depends far more on **engineering decisions** than on model selection.
+
+This project made one thing clear to me:
+
+> _Good AI systems are built as much with restraint as with intelligence._
